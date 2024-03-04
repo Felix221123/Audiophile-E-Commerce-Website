@@ -1,0 +1,182 @@
+//components mixins here
+@mixin flex($direc) {
+    display: flex;
+    flex-direction: $direc;
+}
+
+@mixin flexComp($direc) {
+    display: flex;
+    flex-direction: $direc;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fontSize12px() {
+    font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+}
+
+@mixin fontSize13px() {
+    font-size: clamp(0.8125rem, 0.82vw, 0.825rem);
+}
+
+@mixin fontSize18px() {
+    font-size: clamp(1.125rem, 1.13vw, 1.13rem);
+}
+
+@mixin fontSize15px() {
+    font-size: clamp(0.9375rem, 0.94vw, 0.94rem);
+    line-height: 1.5625rem;
+}
+
+@mixin fontSize14px() {
+    font-size: clamp(0.875rem, 0.88vw, 0.89rem);
+}
+
+@mixin fontSize28px() {
+    font-size: clamp(1.75rem, 1.78vw, 1.79rem);
+}
+
+@mixin fontSize24px() {
+    font-size: clamp(1.5rem, 1.52vw, 1.55rem);
+}
+
+@mixin fontSize32px() {
+    font-size: clamp(2rem, 2.05vw, 2.05rem);
+}
+
+@mixin fontSize40px() {
+    font-size: clamp(2.5rem, 2.55vw, 2.6rem);
+}
+
+@mixin fontSizeHomeProductName() {
+    font-size: clamp(2.25rem, 2.26vw, 2.27rem);
+    line-height: 2.5rem;
+    letter-spacing: 1.29px;
+
+    @media (min-width:768px) {
+        font-size: clamp(3.5rem, 3.6vw, 3.7rem);
+        line-height: 3.625rem;
+        letter-spacing: 2px;
+    }
+}
+
+
+
+@mixin seeProductBtn() {
+    width: 10rem;
+    height: 3rem;
+    background-color: theme("colors.darkBrown");
+    @include fontSize13px();
+    color: theme("colors.pureWhite");
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+
+@mixin Transbtnhovers() {
+    transition: 0.5s;
+}
+
+@mixin mainBodyPadding {
+    margin: 0 1.5rem;
+
+    @media (min-width:768px) {
+        margin: 0 2.5rem;
+    }
+
+    @media (min-width:1440px) {
+        margin: 0 10.2rem;
+    }
+}
+
+
+@mixin hoverActiveBtn($bgclr , $clr) {
+
+    &:hover,
+    :active {
+        background-color: $bgclr;
+        color: $clr;
+    }
+}
+
+
+@mixin paragraphStyle() {
+    @include fontSize15px();
+    line-height: 1.5625rem;
+    color: theme("colors.pureBlack");
+    opacity: 0.5;
+}
+
+
+@mixin productPriceStyle() {
+    color: theme("colors.pureBlack");
+    letter-spacing: 1.29px;
+    @include fontSize18px();
+}
+
+
+@mixin setQuantityAmountContainer {
+    width: 7.5rem;
+    height: 3rem;
+    background-color: theme("colors.lightGrey");
+    @include flexComp(row);
+    justify-content: space-around;
+
+
+    >button {
+        color: theme("colors.pureBlack");
+        opacity: 0.5;
+        border: none;
+        @include fontSize13px();
+
+        &:hover,
+        :active {
+            color: theme("colors.darkBrown");
+        }
+    }
+
+    >p.setPorductQuantity {
+        color: theme("colors.pureBlack");
+        @include fontSize13px();
+    }
+}
+
+
+@mixin labelInputStyle() {
+    > label {
+        @include flex(column);
+        row-gap: 0.5rem;
+        @include fontSize12px();
+        color: theme("colors.pureBlack");
+        position: relative;
+
+        >input {
+            height: 3.5rem;
+            padding-left: 1.5rem;
+            border-radius: 0.5rem;
+            outline: none;
+            border: 1px solid theme("colors.overlayColor");
+            @include fontSize14px();
+            letter-spacing: -0.25px;
+            color: theme("colors.overlayColor");
+            background-color: transparent;
+
+            &:focus,
+            :active,
+            :hover {
+                border-color: theme("colors.darkBrown");
+                color: theme("colors.pureBlack");
+                caret-color: theme("colors.darkBrown");
+            }
+        }
+
+        >span.errorTxt {
+            @include fontSize12px();
+            color: theme("colors.redClr");
+            letter-spacing: -0.21px;
+            position: absolute;
+            right: 0;
+        }
+    }
+}

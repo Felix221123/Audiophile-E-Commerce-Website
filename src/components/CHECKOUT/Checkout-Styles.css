@@ -1,0 +1,602 @@
+@keyframes shakeX {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+.shakeX {
+  animation: shakeX 0.5s ease-in-out;
+}
+
+.noShake {
+  animation: none;
+}
+
+button.goBackBtnCheck {
+  margin-top: 6.5rem;
+  margin-bottom: 1.2rem;
+  border: none;
+  cursor: pointer;
+  font-size: clamp(0.9375rem, 0.94vw, 0.94rem);
+  line-height: 1.5625rem;
+  color: theme("colors.pureBlack");
+  opacity: 0.5;
+}
+@media (min-width: 768px) {
+  button.goBackBtnCheck {
+    margin-top: 8rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  button.goBackBtnCheck {
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.mainCheckContainer {
+  margin: 0 1.5rem;
+}
+@media (min-width: 768px) {
+  .mainCheckContainer {
+    margin: 0 2.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .mainCheckContainer {
+    margin: 0 10.2rem;
+  }
+}
+
+.checkoutSummayBox {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+@media (min-width: 1440px) {
+  .checkoutSummayBox {
+    margin-bottom: 10rem;
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+}
+.checkoutSummayBox > .checkoutContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: theme("colors.pureWhite");
+  row-gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  border-radius: 0.5rem;
+}
+.checkoutSummayBox > .checkoutContainer > h1 {
+  font-size: clamp(1.75rem, 1.78vw, 1.79rem);
+  letter-spacing: 1px;
+  color: theme("colors.pureBlack");
+}
+@media (min-media: 768px) {
+  .checkoutSummayBox > .checkoutContainer > h1 {
+    font-size: clamp(2rem, 2.05vw, 2.05rem);
+    letter-spacing: 1.14px;
+    line-height: 2.25rem;
+  }
+}
+.checkoutSummayBox > .checkoutContainer > form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer,
+.checkoutSummayBox > .checkoutContainer > form .shippingInfoContainer,
+.checkoutSummayBox > .checkoutContainer > form .paymentDetailsContainer {
+  display: flex;
+  flex-direction: column;
+}
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > article.formsHeader,
+.checkoutSummayBox > .checkoutContainer > form .shippingInfoContainer > article.formsHeader,
+.checkoutSummayBox > .checkoutContainer > form .paymentDetailsContainer > article.formsHeader {
+  letter-spacing: 0.93px;
+  line-height: 1.5625rem;
+  color: theme("colors.darkBrown");
+  font-size: clamp(0.8125rem, 0.82vw, 0.825rem);
+  margin-bottom: 0.2rem;
+}
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+@media (min-width: 768px) {
+  .checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer {
+    row-gap: 1.5rem;
+  }
+}
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+@media (min-width: 768px) {
+  .checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+}
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer > .nameContainer > label,
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer .emailAddressContainer > label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.pureBlack");
+  position: relative;
+}
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer > .nameContainer > label > input,
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer .emailAddressContainer > label > input {
+  height: 3.5rem;
+  padding-left: 1.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid theme("colors.overlayColor");
+  font-size: clamp(0.875rem, 0.88vw, 0.89rem);
+  letter-spacing: -0.25px;
+  color: theme("colors.overlayColor");
+  background-color: transparent;
+}
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer > .nameContainer > label > input:focus,
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer > .nameContainer > label > input :active,
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer > .nameContainer > label > input :hover,
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer .emailAddressContainer > label > input:focus,
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer .emailAddressContainer > label > input :active,
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer .emailAddressContainer > label > input :hover {
+  border-color: theme("colors.darkBrown");
+  color: theme("colors.pureBlack");
+  caret-color: theme("colors.darkBrown");
+}
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer > .nameContainer > label > span.errorTxt,
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .nameAddressContainer .emailAddressContainer > label > span.errorTxt {
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.redClr");
+  letter-spacing: -0.21px;
+  position: absolute;
+  right: 0;
+}
+@media (min-width: 768px) {
+  .checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .phoneNumContainer {
+    display: grid;
+    grid-template-columns: 0.5fr;
+  }
+}
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .phoneNumContainer > label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.pureBlack");
+  position: relative;
+}
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .phoneNumContainer > label > input {
+  height: 3.5rem;
+  padding-left: 1.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid theme("colors.overlayColor");
+  font-size: clamp(0.875rem, 0.88vw, 0.89rem);
+  letter-spacing: -0.25px;
+  color: theme("colors.overlayColor");
+  background-color: transparent;
+}
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .phoneNumContainer > label > input:focus,
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .phoneNumContainer > label > input :active,
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .phoneNumContainer > label > input :hover {
+  border-color: theme("colors.darkBrown");
+  color: theme("colors.pureBlack");
+  caret-color: theme("colors.darkBrown");
+}
+.checkoutSummayBox > .checkoutContainer > form > .billingDetialsContainer > .phoneNumContainer > label > span.errorTxt {
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.redClr");
+  letter-spacing: -0.21px;
+  position: absolute;
+  right: 0;
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .addressContainer > label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.pureBlack");
+  position: relative;
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .addressContainer > label > input {
+  height: 3.5rem;
+  padding-left: 1.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid theme("colors.overlayColor");
+  font-size: clamp(0.875rem, 0.88vw, 0.89rem);
+  letter-spacing: -0.25px;
+  color: theme("colors.overlayColor");
+  background-color: transparent;
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .addressContainer > label > input:focus,
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .addressContainer > label > input :active,
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .addressContainer > label > input :hover {
+  border-color: theme("colors.darkBrown");
+  color: theme("colors.pureBlack");
+  caret-color: theme("colors.darkBrown");
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .addressContainer > label > span.errorTxt {
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.redClr");
+  letter-spacing: -0.21px;
+  position: absolute;
+  right: 0;
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+@media (min-width: 768px) {
+  .checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer > .zipCodeContainer > label,
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer .cityContainer > label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.pureBlack");
+  position: relative;
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer > .zipCodeContainer > label > input,
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer .cityContainer > label > input {
+  height: 3.5rem;
+  padding-left: 1.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid theme("colors.overlayColor");
+  font-size: clamp(0.875rem, 0.88vw, 0.89rem);
+  letter-spacing: -0.25px;
+  color: theme("colors.overlayColor");
+  background-color: transparent;
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer > .zipCodeContainer > label > input:focus,
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer > .zipCodeContainer > label > input :active,
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer > .zipCodeContainer > label > input :hover,
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer .cityContainer > label > input:focus,
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer .cityContainer > label > input :active,
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer .cityContainer > label > input :hover {
+  border-color: theme("colors.darkBrown");
+  color: theme("colors.pureBlack");
+  caret-color: theme("colors.darkBrown");
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer > .zipCodeContainer > label > span.errorTxt,
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .zipCodeCityContainer .cityContainer > label > span.errorTxt {
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.redClr");
+  letter-spacing: -0.21px;
+  position: absolute;
+  right: 0;
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .countryContainer > label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.pureBlack");
+  position: relative;
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .countryContainer > label > input {
+  height: 3.5rem;
+  padding-left: 1.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid theme("colors.overlayColor");
+  font-size: clamp(0.875rem, 0.88vw, 0.89rem);
+  letter-spacing: -0.25px;
+  color: theme("colors.overlayColor");
+  background-color: transparent;
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .countryContainer > label > input:focus,
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .countryContainer > label > input :active,
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .countryContainer > label > input :hover {
+  border-color: theme("colors.darkBrown");
+  color: theme("colors.pureBlack");
+  caret-color: theme("colors.darkBrown");
+}
+.checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .countryContainer > label > span.errorTxt {
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.redClr");
+  letter-spacing: -0.21px;
+  position: absolute;
+  right: 0;
+}
+@media (min-width: 768px) {
+  .checkoutSummayBox > .checkoutContainer > form > .shippingInfoContainer > .countryContainer {
+    display: grid;
+    grid-template-columns: 0.5fr;
+  }
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+@media (min-width: 768px) {
+  .checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers > p.customerPaymentMethod {
+  letter-spacing: -0.21px;
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.pureBlack");
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers > .userChoicePaymentContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers > .userChoicePaymentContainer > .eMoneyContainer,
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers > .userChoicePaymentContainer .cashOnDeliveryContainer {
+  width: 17.5rem;
+  height: 3.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 1rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  border: 1px solid theme("colors.overlayColor");
+  border-radius: 0.5rem;
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers > .userChoicePaymentContainer > .eMoneyContainer:hover,
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers > .userChoicePaymentContainer .cashOnDeliveryContainer:hover {
+  border-color: theme("colors.darkBrown");
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers > .userChoicePaymentContainer > .eMoneyContainer > input[type=radio],
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers > .userChoicePaymentContainer .cashOnDeliveryContainer > input[type=radio] {
+  border: 1px solid theme("colors.overlayColor");
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers > .userChoicePaymentContainer > .eMoneyContainer > input[type=radio]:checked,
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers > .userChoicePaymentContainer .cashOnDeliveryContainer > input[type=radio]:checked {
+  accent-color: theme("colors.darkBrown");
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers > .userChoicePaymentContainer > .eMoneyContainer > label,
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .paymentContainers > .userChoicePaymentContainer .cashOnDeliveryContainer > label {
+  letter-spacing: -0.25px;
+  font-size: clamp(0.875rem, 0.88vw, 0.89rem);
+  color: theme("colors.pureBlack");
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+@media (min-width: 768px) {
+  .checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer > .eMoneyNumberContainer > label,
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer .eMoneyPinContainer > label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.pureBlack");
+  position: relative;
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer > .eMoneyNumberContainer > label > input,
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer .eMoneyPinContainer > label > input {
+  height: 3.5rem;
+  padding-left: 1.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid theme("colors.overlayColor");
+  font-size: clamp(0.875rem, 0.88vw, 0.89rem);
+  letter-spacing: -0.25px;
+  color: theme("colors.overlayColor");
+  background-color: transparent;
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer > .eMoneyNumberContainer > label > input:focus,
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer > .eMoneyNumberContainer > label > input :active,
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer > .eMoneyNumberContainer > label > input :hover,
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer .eMoneyPinContainer > label > input:focus,
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer .eMoneyPinContainer > label > input :active,
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer .eMoneyPinContainer > label > input :hover {
+  border-color: theme("colors.darkBrown");
+  color: theme("colors.pureBlack");
+  caret-color: theme("colors.darkBrown");
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer > .eMoneyNumberContainer > label > span.errorTxt,
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .eMoneyContainerOptionsContainer .eMoneyPinContainer > label > span.errorTxt {
+  font-size: clamp(0.75rem, 0.755vw, 0.76rem);
+  color: theme("colors.redClr");
+  letter-spacing: -0.21px;
+  position: absolute;
+  right: 0;
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .cashOnDeliveryOption {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .cashOnDeliveryOption {
+    display: flex;
+    flex-direction: row;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .cashOnDeliveryOption > img {
+  max-width: 3rem;
+}
+.checkoutSummayBox > .checkoutContainer > form > .paymentDetailsContainer > .cashOnDeliveryOption > p.txt {
+  font-size: clamp(0.9375rem, 0.94vw, 0.94rem);
+  line-height: 1.5625rem;
+  color: theme("colors.pureBlack");
+  line-height: 1.5625rem;
+  opacity: 0.5;
+}
+.checkoutSummayBox > .summaryContainerBox {
+  display: flex;
+  flex-direction: column;
+  background-color: theme("colors.pureWhite");
+  row-gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 5.5rem;
+  height: auto;
+}
+@media (min-width: 1440px) {
+  .checkoutSummayBox > .summaryContainerBox {
+    max-height: 37%;
+    overflow: auto;
+  }
+}
+.checkoutSummayBox > .summaryContainerBox > article {
+  font-size: clamp(1.125rem, 1.13vw, 1.13rem);
+  letter-spacing: 1.29px;
+  color: theme("colors.pureBlack");
+}
+.checkoutSummayBox > .summaryContainerBox > .summaryItemsContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.3rem;
+}
+.checkoutSummayBox > .summaryContainerBox > .summaryItemsContainer > .EachItemsContainer > p.setQuantity {
+  color: theme("colors.pureBlack");
+  opacity: 0.5;
+  font-size: clamp(0.9375rem, 0.94vw, 0.94rem);
+  line-height: 1.5625rem;
+}
+.checkoutSummayBox > .summaryContainerBox > .totalContainerComp {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.checkoutSummayBox > .summaryContainerBox > .totalContainerComp > .mainPricingContianer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.checkoutSummayBox > .summaryContainerBox > button.payBtn {
+  width: 10rem;
+  height: 3rem;
+  background-color: theme("colors.darkBrown");
+  font-size: clamp(0.8125rem, 0.82vw, 0.825rem);
+  color: theme("colors.pureWhite");
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 1rem 0rem;
+  width: 100%;
+}
+
+.overlay-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: theme("colors.overlayColor");
+  z-index: 190;
+}
+
+.overlay-active-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: theme("colors.lightWhite");
+  z-index: 190;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.Spincontainer {
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  transform: translate(50%, 0);
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+@media (max-width: 1000px) {
+  .Spincontainer {
+    transform: translate(43%, 0);
+  }
+}
+.Spincontainer .spinner {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  border: 4.5px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  border-color: #dbdcef rgba(0, 0, 0, 0);
+  animation: spinner-e04l1k 1s infinite linear;
+}
+.Spincontainer .spinner::before,
+.Spincontainer .spinner::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2.2px;
+  border: inherit;
+  border-radius: 50%;
+}
+.Spincontainer .spinner::before {
+  border-color: #474bff rgba(0, 0, 0, 0);
+  animation: inherit;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+}
+.Spincontainer .spinner::after {
+  margin: 8.9px;
+}
+@keyframes spinner-e04l1k {
+  100% {
+    transform: rotate(1turn);
+  }
+}/*# sourceMappingURL=Checkout-Styles.css.map */

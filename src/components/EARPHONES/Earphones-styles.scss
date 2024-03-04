@@ -1,0 +1,43 @@
+@import "../static/base.scss";
+
+
+
+//mixins here
+
+
+
+
+
+
+
+
+
+
+
+
+//Main styles
+.allProductsContainer {
+    @include mainBodyPadding();
+    margin-top: 3rem;
+    @include flex(column);
+    row-gap: 3rem;
+
+    @media (min-width:768px) {
+        margin-top: 4.5rem;
+        row-gap: 5rem;
+    }
+
+    @media (min-width:1440px) {
+        margin-top: 6rem;
+        row-gap: 7rem;
+    }
+}
+
+
+.navLinkContainerBox {
+    margin: 2rem 0;
+
+    @media (min-width:1440px) {
+        margin: 0;
+    }
+}

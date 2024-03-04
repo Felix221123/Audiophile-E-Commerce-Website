@@ -1,0 +1,417 @@
+@import "../static/base.scss";
+
+
+//mixins here
+@mixin headerContainer() {
+    position: relative;
+    // z-index: 99;
+    // background-color: red;
+
+    >img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    >.descriptionContainer {
+        position: absolute;
+        width: 100%;
+        @include flexComp(column);
+        top: 0;
+        margin-top: 22rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        row-gap: 1.5rem;
+
+        >p.newProduct {
+            @include fontSize14px();
+            letter-spacing: 10px;
+            color: theme("colors.overlayColor")
+        }
+
+        >h1.productName {
+            color: theme("colors.pureWhite");
+            @include fontSizeHomeProductName();
+            text-align: center;
+
+        }
+
+        >p.productDescription {
+            color: theme("colors.overlayColor");
+            text-align: center;
+            padding: 0rem 2rem;
+            @include fontSize15px();
+        }
+
+        >button.seeProductBtn {
+            @include seeProductBtn();
+
+            &:hover,
+            :active {
+                background-color: theme("colors.lightBrown");
+                @include Transbtnhovers();
+            }
+        }
+
+
+        @media (min-width:768px) {
+            margin-top: 26rem;
+
+            >h1.productName {
+                padding: 0rem 10%;
+                letter-spacing: 2px;
+            }
+
+            >p.productDescription {
+                padding: 0rem 30%;
+            }
+
+        }
+
+        @media (min-width:1440px) {
+            left: 0;
+            padding-left: 10.4rem;
+            transform: translate(0, -50%);
+            align-items: flex-start;
+            row-gap: 2rem;
+
+            >p.newProduct {
+                text-align: left;
+
+            }
+
+            >h1.productName {
+                text-align: left;
+                padding: 0rem 50% 0rem 0rem;
+
+            }
+
+            p.productDescription {
+                text-align: left;
+                padding: 0rem 72% 0rem 0rem
+            }
+
+        }
+
+    }
+}
+
+
+
+
+@mixin zx9SpeakerContainerStyles() {
+    padding: 4rem 1.5rem;
+    background-color: theme("colors.darkBrown");
+    background-image: url("/assets/home/desktop/pattern-circles.svg");
+    background-position: top center top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.5rem;
+    @include flexComp(column);
+    row-gap: 1.5rem;
+    margin-top: 2rem;
+
+    >.imgContainer {
+        width: 100%;
+        max-width: 10.75rem;
+    }
+
+    >.speakerdescriptionContainer {
+        @include flexComp(column);
+        row-gap: 1.5rem;
+
+        >p.productName {
+            color: theme("colors.pureWhite");
+            @include fontSizeHomeProductName();
+            text-align: center;
+            padding: 0rem 20%;
+        }
+
+        >p.productDescription {
+            color: theme("colors.pureWhite");
+            @include fontSize15px();
+            opacity: 0.6;
+            text-align: center;
+        }
+
+        >button.productBtN {
+            @include seeProductBtn();
+            background-color: theme("colors.pureBlack");
+
+            &:hover,
+            :active {
+                background-color: #4C4C4C;
+                @include Transbtnhovers();
+            }
+
+        }
+    }
+
+
+
+
+
+    @media (min-width:768px) {
+
+        row-gap: 3rem;
+
+        >.imgContainer {
+            max-width: 12.3125rem;
+        }
+
+        >.speakerdescriptionContainer {
+            row-gap: 2rem;
+
+            // >p.productName {}
+
+            >p.productDescription {
+                padding: 0rem 22%;
+            }
+        }
+    }
+
+
+
+    @media (min-width:1440px) {
+        @include flexComp(row);
+        position: relative;
+        column-gap: 8rem;
+        padding: 0;
+        height: 35rem;
+        overflow: hidden;
+
+
+        >.imgContainer {
+            width: 100%;
+            max-width: 25.625rem;
+            position: relative;
+            bottom: -14.5%;
+            // overflow: hidden;
+            margin-left: 8rem;
+
+        }
+
+        >.speakerdescriptionContainer {
+            align-items: flex-start;
+            padding: 0 5% 0 0;
+
+            >p.productName {
+                text-align: left;
+                padding: 0 20% 0 0;
+            }
+
+            >p.productDescription {
+                padding: 0 7% 0 0;
+                text-align: left;
+            }
+        }
+
+
+    }
+}
+
+
+@mixin zX7speakerContainer() {
+    // background-color: red;
+    position: relative;
+    border-radius: 1rem;
+
+    >.speakerDescriptionContainer {
+        @include flexComp(column);
+        align-items: flex-start;
+        position: absolute;
+        top: 50%;
+        left: 37%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        row-gap: 2rem;
+
+        >p.productName {
+            @include fontSize28px();
+            letter-spacing: 2px;
+            color: theme("colors.pureBlack");
+            padding: 0;
+            // background-color: red;
+        }
+
+        >button.productBtn {
+            @include seeProductBtn();
+            background-color: transparent;
+            color: theme("colors.pureBlack");
+            border: 1px solid theme("colors.pureBlack");
+
+            &:hover,
+            :active {
+                background-color: theme("colors.pureBlack");
+                color: theme("colors.pureWhite");
+                @include Transbtnhovers();
+            }
+
+        }
+
+
+        @media (min-width:768px) {
+            left: 25%;
+        }
+
+        @media (min-width:1440px) {
+            left: 18%;
+        }
+    }
+
+    >div.imgContainer {
+        width: 100%;
+
+        >img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+    }
+}
+
+
+@mixin yx1earphonesContainer() {
+    height: auto;
+    @include flex(column);
+    row-gap: 1rem;
+
+    >.imgContainer {
+        width: 100%;
+
+        >img {
+            width: inherit;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+    }
+
+    >.productDetailsContainer {
+        background-color: theme("colors.lightGrey");
+        width: 100%;
+        height: 12.5rem;
+        @include flexComp(column);
+        padding: 0 0 0 1.5rem;
+        align-items: flex-start;
+        row-gap: 1.5rem;
+        border-radius: 0.5rem;
+
+
+        >p.productName {
+            @include fontSize28px();
+            letter-spacing: 2px;
+            color: theme("colors.pureBlack");
+            padding: 0;
+        }
+
+        >button.productBtn {
+            @include seeProductBtn();
+            background-color: transparent;
+            color: theme("colors.pureBlack");
+            border: 1px solid theme("colors.pureBlack");
+
+            &:hover,
+            :active {
+                background-color: theme("colors.pureBlack");
+                color: theme("colors.pureWhite");
+                @include Transbtnhovers();
+            }
+        }
+    }
+
+    @media (min-width:768px) {
+        @include flex(row);
+        column-gap: 1.5rem;
+
+        >.productDetailsContainer {
+            width: 100%;
+            height: 20rem;
+            padding: 0 0 0 3rem;
+        }
+
+        >.imgContainer {
+            max-height: 20rem;
+
+            >img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+            }
+        }
+
+    }
+
+
+    @media (min-width:1440px) {
+        column-gap: 2rem;
+
+        >.productDetailsContainer {
+            padding: 0 0 0 5rem;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Main styles here
+.headerContainer {
+    @include headerContainer();
+}
+
+.navLinkContainerBox {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+
+.allItemsContainer {
+    @include flex(column);
+    margin: 1.5rem 1.5rem;
+    row-gap: 1rem;
+
+
+    @media (min-width:768px) {
+        margin: 1.5rem 2.5rem;
+        row-gap: 1.5rem;
+    }
+
+    @media (min-width:1440px) {
+        margin: 1.5rem 10.2rem;
+        row-gap: 2rem;
+
+    }
+}
+
+
+.zx9SpeakerContainer {
+    @include zx9SpeakerContainerStyles();
+}
+
+
+.zX7speakerContainer {
+    @include zX7speakerContainer();
+}
+
+.yx1earphonesContainer {
+    @include yx1earphonesContainer();
+}

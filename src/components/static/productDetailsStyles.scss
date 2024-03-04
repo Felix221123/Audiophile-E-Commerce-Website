@@ -1,0 +1,19 @@
+@import "../static/base.scss";
+
+.mainProductsDetialsContainer {
+    @include mainBodyPadding();
+    // margin-top: 7rem;
+    // position: relative;
+    // @include flex(column);
+    // row-gap: 3rem;
+
+    @media (min-width:768px) {
+        // margin-top: 4.5rem;
+        // row-gap: 5rem;
+    }
+
+    @media (min-width:1440px) {
+        margin-top: 6rem;
+        // row-gap: 7rem;
+    }
+}
