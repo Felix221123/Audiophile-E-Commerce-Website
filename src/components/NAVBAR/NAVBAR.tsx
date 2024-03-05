@@ -11,7 +11,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./Navbar-styles.css";
 import { ItemsContainer } from "../BASE/CartItems";
 
-
 interface QuantityProps {
   itemsQuantity: number;
   removeItems: () => void;
@@ -93,31 +92,35 @@ export const NAVBAR = ({ itemsQuantity, removeItems }: QuantityProps) => {
 
   // updates the body background whenever the visiblity of the menu changes
   useEffect(() => {
-    const isHomeOrIndexRoute = ["/", "/home/","/headphones/product-detail-headphones-1/","/headphones/product-detail-headphones-2/","/headphones/product-detail-headphones-3/","/speakers/product-detail-speakers-1/","/speakers/product-detail-speakers-2/","/earphones/product-detail-earphones-1/","/checkout/"].includes(
-      location.pathname.toLowerCase()
-    );
+    const isHomeOrIndexRoute = [
+      "/",
+      "/home/",
+      "/headphones/product-detail-headphones-1/",
+      "/headphones/product-detail-headphones-2/",
+      "/headphones/product-detail-headphones-3/",
+      "/speakers/product-detail-speakers-1/",
+      "/speakers/product-detail-speakers-2/",
+      "/earphones/product-detail-earphones-1/",
+      "/checkout/",
+    ].includes(location.pathname.toLowerCase());
 
     console.log("isHomeOrIndexRoute:", isHomeOrIndexRoute);
 
     // Check conditions and update overlay styles
     if (window.innerWidth < 1440 && menuBarVisibility) {
       document.body.classList.add("overlay-active");
-
     } else if (window.innerWidth > 0 && cartVisibility) {
       document.body.classList.add("overlay-active");
     } else {
       document.body.classList.remove("overlay-active");
-      
-      
     }
 
     // Add class to .overflowContainer if on the home or index route
-    if (isHomeOrIndexRoute ) {
+    if (isHomeOrIndexRoute) {
       document
         .querySelector(".overflowContainer")
         ?.classList.add("addMarginTop");
-    }
-    else {
+    } else {
       document
         .querySelector(".overflowContainer")
         ?.classList.remove("addMarginTop");
@@ -131,8 +134,6 @@ export const NAVBAR = ({ itemsQuantity, removeItems }: QuantityProps) => {
         ?.classList.remove("addMarginTop");
     };
   }, [menuBarVisibility, cartVisibility]);
-
-  
 
   return (
     <>
@@ -162,6 +163,9 @@ export const NAVBAR = ({ itemsQuantity, removeItems }: QuantityProps) => {
         </div>
 
         <div className="cartContainerBtn">
+          {itemsQuantity > 0 && (
+            <div className="itemsCount font-bold">{itemsQuantity}</div>
+          )}
           <img src={CART} alt="cart icon" onClick={togglingCart} />
         </div>
       </header>
@@ -284,13 +288,11 @@ export const NAVBAR = ({ itemsQuantity, removeItems }: QuantityProps) => {
             )}
 
             {/* when an item quanity is more then zero  */}
-            {itemsQuantity > 0 &&
-              (<div className="itemsContainer">
-              <ItemsContainer />
-              </div>)
-            }
-
-            
+            {itemsQuantity > 0 && (
+              <div className="itemsContainer">
+                <ItemsContainer />
+              </div>
+            )}
 
             {/* checkout button */}
             {itemsQuantity > 0 && (

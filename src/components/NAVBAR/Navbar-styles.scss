@@ -84,6 +84,21 @@
 
 @mixin cartContainerBtn() {
     cursor: pointer;
+    position: relative;
+
+    >.itemsCount {
+        @include flexComp(column);
+        width: 1.3rem;
+        height: 1.3rem;
+        border-radius: 50%;
+        background-color: theme("colors.lightGrey");
+        color: theme("colors.darkBrown");
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        @include fontSize12px();
+
+    }
 
     @media (min-width:768px) and (max-width:1439px) {
         position: absolute;
