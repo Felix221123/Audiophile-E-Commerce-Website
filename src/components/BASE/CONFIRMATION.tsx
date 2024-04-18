@@ -1,6 +1,6 @@
 import TICKICON from "/assets/checkout/icon-order-confirmation.svg";
 import { useNavigate } from "react-router-dom";
-import { useProductContext } from "../BASE/AddToCartContext";
+// import { useProductContext } from "../BASE/AddToCartContext";
 import { getProductDetails } from "./CartItems";
 import "../NAVBAR/Navbar-styles.css";
 import { ProductToAdd } from "./AddToCartContext";
@@ -13,7 +13,7 @@ export const ComfirmationComp = () => {
     navigate("/home");
   };
 
-  const { itemsContainer } = useProductContext();
+  // const { itemsContainer } = useProductContext();
 
   //getting the values from the local storage
   const storedQuantities = JSON.parse(
@@ -22,12 +22,14 @@ export const ComfirmationComp = () => {
 
   const grandTotalAmount = () => {
     // Calculate the total amount based on updated quantities
-    const totalAmount = itemsContainer.reduce((sum, item, index) => {
+    const totalAmount = ItemsInLocalStorage.reduce((sum, item, index) => {
       return sum + item.price * storedQuantities[index];
     }, 0);
-
+    const mainTotal = totalAmount + 50;
+    console.log(mainTotal);
     // Format the total amount with commas
     return (totalAmount + 50).toLocaleString();
+    
   };
 
   const ItemsInLocalStorage = JSON.parse(localStorage.getItem("itemsContainer") || "[]") as ProductToAdd[];
